@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bytant Innovative Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="h-full font-body">
+  <div id="app-wrapper" class="h-full w-full overflow-auto">
+    
+    <!-- Background Layer -->
+    <div class="fixed inset-0 bg-[#0D1117] kente-pattern"></div>
+    
+    <!-- Floating African Geometric Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <svg class="absolute top-20 left-10 w-32 h-32 animate-float opacity-20" viewbox="0 0 100 100">
+        <polygon points="50,10 90,90 10,90" fill="none" stroke="#FFB347" stroke-width="2" />
+        <polygon points="50,25 75,75 25,75" fill="none" stroke="#DC2626" stroke-width="1.5" />
+      </svg>
+      <svg class="absolute top-40 right-20 w-24 h-24 animate-float-delayed opacity-15" viewbox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#FFB347" stroke-width="2" />
+        <circle cx="50" cy="50" r="25" fill="none" stroke="#DC2626" stroke-width="1.5" />
+        <circle cx="50" cy="50" r="10" fill="#FFB347" opacity="0.3" />
+      </svg>
+      <svg class="absolute bottom-40 left-20 w-40 h-40 animate-pulse-glow opacity-10" viewbox="0 0 100 100">
+        <rect x="20" y="20" width="60" height="60" fill="none" stroke="#FFB347" stroke-width="2"
+          transform="rotate(45 50 50)" />
+        <rect x="30" y="30" width="40" height="40" fill="none" stroke="#DC2626" stroke-width="1.5"
+          transform="rotate(45 50 50)" />
+      </svg>
+      <svg class="absolute bottom-20 right-40 w-28 h-28 animate-float opacity-15" viewbox="0 0 100 100">
+        <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="none" stroke="#FFB347" stroke-width="2" />
+        <path d="M50 25 L75 50 L50 75 L25 50 Z" fill="none" stroke="#DC2626" stroke-width="1.5" />
+      </svg>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="relative z-10 min-h-full flex flex-col">
+      
+      <!-- Navigation -->
+      <nav class="w-full px-6 py-4 flex items-center justify-between animate-fade-in">
+        <div class="flex items-center gap-3">
+          
+          <!-- Logo SVG -->
+          <svg class="w-12 h-12" viewbox="0 0 60 60">
+            <defs>
+              <lineargradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#FFB347" />
+                <stop offset="100%" style="stop-color:#DC2626" />
+              </lineargradient>
+            </defs>
+            <polygon points="30,5 55,20 55,50 30,55 5,50 5,20" fill="none" stroke="url(#logoGrad)" stroke-width="2.5" />
+            <text x="30" y="38" text-anchor="middle" fill="url(#logoGrad)" font-size="24" font-weight="bold"
+              font-family="Space Grotesk">
+              B
+            </text>
+          </svg><span id="nav-logo-text" class="text-white font-bold text-xl hidden sm:block">Bytant</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="relative">
+            <button id="help-us-btn"
+              class="border-2 border-[#FFB347] text-[#FFB347] px-5 py-2 rounded-full font-semibold text-sm hover:bg-[#FFB347]/10 transition-all duration-300 hover:scale-105">Help
+              Us</button>
+
+            <!-- Help Us Dropdown Menu -->
+            <div id="help-us-menu"
+              class="hidden absolute top-full left-0 mt-2 w-64 bg-[#1A1F26] border-2 border-[#FFB347]/30 rounded-2xl shadow-2xl shadow-[#FFB347]/20 overflow-hidden z-[9999]">
+              <div class="p-2"><button
+                  class="help-menu-item w-full text-left px-4 py-3 rounded-lg hover:bg-[#FFB347]/10 transition-colors group">
+                  <div class="flex items-center gap-3"><span class="text-2xl">����</span>
+                    <div>
+                      <div class="text-white font-semibold text-sm group-hover:text-[#FFB347] transition-colors">
+                        Donate
+                      </div>
+                      <div class="text-gray-500 text-xs">
+                        Support our mission
+                      </div>
+                    </div>
+                  </div>
+                </button> <button
+                  class="help-menu-item w-full text-left px-4 py-3 rounded-lg hover:bg-[#FFB347]/10 transition-colors group">
+                  <div class="flex items-center gap-3"><span class="text-2xl">👨‍🏫</span>
+                    <div>
+                      <div class="text-white font-semibold text-sm group-hover:text-[#FFB347] transition-colors">
+                        Mentor a Founder
+                      </div>
+                      <div class="text-gray-500 text-xs">
+                        Share your expertise
+                      </div>
+                    </div>
+                  </div>
+                </button> <button
+                  class="help-menu-item w-full text-left px-4 py-3 rounded-lg hover:bg-[#FFB347]/10 transition-colors group">
+                  <div class="flex items-center gap-3"><span class="text-2xl">💡</span>
+                    <div>
+                      <div class="text-white font-semibold text-sm group-hover:text-[#FFB347] transition-colors">
+                        Share Idea
+                      </div>
+                      <div class="text-gray-500 text-xs">
+                        Contribute your vision
+                      </div>
+                    </div>
+                  </div>
+                </button> <button
+                  class="help-menu-item w-full text-left px-4 py-3 rounded-lg hover:bg-[#FFB347]/10 transition-colors group">
+                  <div class="flex items-center gap-3"><span class="text-2xl">✍️</span>
+                    <div>
+                      <div class="text-white font-semibold text-sm group-hover:text-[#FFB347] transition-colors">
+                        Leave a Suggestion
+                      </div>
+                      <div class="text-gray-500 text-xs">
+                        Help us improve
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+            </div>
+
+            <button id="nav-cta-btn"
+              class="bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] px-5 py-2 rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-[#FFB347]/30 transition-all duration-300 hover:scale-105">
+              Contact Us </button>
+          </div>
+        </div>
+      </nav><!-- Help Us Modal -->
+      <div id="help-modal"
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4">
+        <div
+          class="bg-[#1A1F26] rounded-3xl border-2 border-[#FFB347]/30 shadow-2xl shadow-[#FFB347]/20 max-w-md w-full p-8 relative animate-slide-up">
+          <!-- Close Button --> <button id="close-help-modal"
+            class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg></button> <!-- Modal Header -->
+          <div class="text-center mb-8">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#0D1117]" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">How You Can Help</h3>
+            <p class="text-gray-400 text-sm">Choose a way to support our mission</p>
+          </div><!-- Help Options -->
+          <div class="space-y-4"><!-- Donate --> <button
+              class="help-option-btn flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group w-full text-left">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center text-2xl">
+                💝
+              </div>
+              <div class="flex-1">
+                <div class="text-white font-semibold text-sm">
+                  Donate
+                </div>
+                <div class="text-gray-400 text-xs">
+                  Support our mission financially
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
+                viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button> <!-- Mentor --> <button
+              class="help-option-btn flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group w-full text-left">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center text-2xl">
+                👨‍🏫
+              </div>
+              <div class="flex-1">
+                <div class="text-white font-semibold text-sm">
+                  Mentor a Founder
+                </div>
+                <div class="text-gray-400 text-xs">
+                  Share your expertise
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
+                viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button> <!-- Share Idea --> <button
+              class="help-option-btn flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group w-full text-left">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center text-2xl">
+                💡
+              </div>
+              <div class="flex-1">
+                <div class="text-white font-semibold text-sm">
+                  Share an Idea
+                </div>
+                <div class="text-gray-400 text-xs">
+                  Contribute your vision
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
+                viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button> <!-- Suggestion --> <button
+              class="help-option-btn flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group w-full text-left">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center text-2xl">
+                ✍️
+              </div>
+              <div class="flex-1">
+                <div class="text-white font-semibold text-sm">
+                  Leave a Suggestion
+                </div>
+                <div class="text-gray-400 text-xs">
+                  Help us improve
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
+                viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div><!-- Contact Us Modal -->
+      <div id="contact-modal"
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4">
+        <div
+          class="bg-[#1A1F26] rounded-3xl border-2 border-[#FFB347]/30 shadow-2xl shadow-[#FFB347]/20 max-w-md w-full p-8 relative animate-slide-up">
+          <!-- Close Button --> <button id="close-contact-modal"
+            class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg></button> <!-- Modal Header -->
+          <div class="text-center mb-8">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#0D1117]" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Get In Touch</h3>
+            <p class="text-gray-400 text-sm">We'd love to hear from you!</p>
+          </div><!-- Contact Options -->
+          <div class="space-y-4"><!-- WhatsApp --> <a href="https://wa.me/233504378971" target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group">
+              <div
+                class="w-12 h-12 rounded-full bg-[#25D366]/20 flex items-center justify-center group-hover:bg-[#25D366]/30 transition-colors">
+                <svg class="w-6 h-6 text-[#25D366]" fill="currentColor" viewbox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="text-white font-semibold text-sm">
+                  WhatsApp
+                </div>
+                <div class="text-gray-400 text-xs">
+                  0504378971
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
+                viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a> <!-- Email --> <a href="mailto:bytantinnovativegroup@gmail.com"
+              class="flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group">
+              <div
+                class="w-12 h-12 rounded-full bg-[#FFB347]/20 flex items-center justify-center group-hover:bg-[#FFB347]/30 transition-colors">
+                <svg class="w-6 h-6 text-[#FFB347]" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="text-white font-semibold text-sm">
+                  Email
+                </div>
+                <div class="text-gray-400 text-xs">
+                  bytantinnovativegroup@gmail.com
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
+                viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a> <!-- LinkedIn --> <a href="https://linkedin.com/company/bytant-innovative-group" target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group">
+              <div
+                class="w-12 h-12 rounded-full bg-[#0A66C2]/20 flex items-center justify-center group-hover:bg-[#0A66C2]/30 transition-colors">
+                <svg class="w-6 h-6 text-[#0A66C2]" fill="currentColor" viewbox="0 0 24 24">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="text-white font-semibold text-sm">
+                  LinkedIn
+                </div>
+                <div class="text-gray-400 text-xs">
+                  bytant-innovative-group
+                </div>
+              </div>
+              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
+                viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- Hero Section -->
+      <section class="flex-1 flex flex-col items-center justify-center px-6 py-16 text-center">
+        <div class="max-w-4xl mx-auto"><!-- Decorative Element Above Title -->
+          <div class="animate-slide-up mb-6">
+            <svg class="w-20 h-8 mx-auto" viewbox="0 0 80 30">
+              <line x1="0" y1="15" x2="25" y2="15" stroke="#FFB347" stroke-width="2" />
+              <circle cx="40" cy="15" r="5" fill="#DC2626" />
+              <line x1="55" y1="15" x2="80" y2="15" stroke="#FFB347" stroke-width="2" />
+            </svg>
+          </div><!-- Main Title -->
+          <h1 id="hero-title"
+            class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-4 animate-slide-up leading-tight">
+            Bytant<br><span class="gradient-text">Innovative Group</span></h1><!-- Slogan -->
+          <p id="hero-slogan"
+            class="text-xl sm:text-2xl md:text-3xl text-[#FFB347] font-display italic mb-8 animate-slide-up-delayed">"We
+            Innovate to Inspire"</p><!-- Description -->
+          <p id="hero-description"
+            class="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mb-12 animate-slide-up-delayed-2 leading-relaxed">
+            Empowering young Africans to rise, build, and shape the future of our continent through technology and
+            innovation.</p><!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"><a
+              href="https://chat.whatsapp.com/DVWNz5WeXfQBDNVragWCqD" target="_blank" rel="noopener noreferrer"
+              id="cta-primary-btn"
+              class="group relative bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] px-10 py-4 rounded-full font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#FFB347]/40 hover:scale-105 inline-block">
+              <span class="relative z-10" id="cta-button-text">Join the Founder's Room</span>
+              <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
+            </a> <a href="innovations.html"
+              class="border-2 border-[#FFB347] text-[#FFB347] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#FFB347]/10 transition-all duration-300 hover:scale-105 inline-block text-center">
+              View Innovations </a>
+          </div>
+        </div><!-- Scroll Indicator -->
+        <div class="mt-16 animate-bounce">
+          <svg class="w-8 h-8 text-[#FFB347] opacity-60" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </section>
+      
+      
+      <!-- Mission Section -->
+      <section id="mission" class="px-6 py-20 adinkra-bg">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12 items-center"><!-- African Pattern SVG -->
+            <div class="relative order-2 md:order-1">
+              <svg class="w-full max-w-md mx-auto" viewbox="0 0 400 400"><!-- Outer ring -->
+                <circle cx="200" cy="200" r="180" fill="none" stroke="#FFB347" stroke-width="3" opacity="0.3" />
+                <circle cx="200" cy="200" r="160" fill="none" stroke="#DC2626" stroke-width="2" opacity="0.2" />
+                <!-- Inner geometric pattern (inspired by Adinkra symbols) -->
+                <g transform="translate(200, 200)"><!-- Sankofa-inspired shape -->
+                  <path d="M0,-80 Q40,-40 0,0 Q-40,-40 0,-80" fill="none" stroke="#FFB347" stroke-width="3" />
+                  <path d="M0,80 Q-40,40 0,0 Q40,40 0,80" fill="none" stroke="#FFB347" stroke-width="3" />
+                  <path d="M-80,0 Q-40,40 0,0 Q-40,-40 -80,0" fill="none" stroke="#DC2626" stroke-width="2" />
+                  <path d="M80,0 Q40,-40 0,0 Q40,40 80,0" fill="none" stroke="#DC2626" stroke-width="2" />
+                  <!-- Center element -->
+                  <circle cx="0" cy="0" r="20" fill="url(#logoGrad)" opacity="0.8" />
+                  <circle cx="0" cy="0" r="10" fill="#0D1117" />
+                </g> <!-- Corner decorations -->
+                <polygon points="50,50 80,50 65,80" fill="#FFB347" opacity="0.4" />
+                <polygon points="350,50 320,50 335,80" fill="#FFB347" opacity="0.4" />
+                <polygon points="50,350 80,350 65,320" fill="#DC2626" opacity="0.3" />
+                <polygon points="350,350 320,350 335,320" fill="#DC2626" opacity="0.3" />
+              </svg>
+            </div><!-- Mission Content -->
+            <div class="order-1 md:order-2">
+              <h2 id="mission-title" class="font-display text-4xl sm:text-5xl font-bold text-white mb-6">Our <span
+                  class="gradient-text">Mission</span></h2>
+              <p id="mission-text" class="text-gray-400 text-lg leading-relaxed mb-8">To ignite innovation across Africa
+                by nurturing the next generation of tech leaders. We believe in the boundless potential of African youth
+                to create solutions that will transform our communities and inspire the world.</p><!-- Values -->
+              <div class="grid grid-cols-2 gap-4">
+                <div
+                  class="bg-[#1A1F26] p-4 rounded-xl border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-colors">
+                  <div class="text-[#FFB347] text-2xl mb-2">
+                    🌍
+                  </div>
+                  <h3 class="text-white font-bold mb-1">Pan-African</h3>
+                  <p class="text-gray-500 text-sm">United across borders</p>
+                </div>
+                <div
+                  class="bg-[#1A1F26] p-4 rounded-xl border border-[#DC2626]/20 hover:border-[#DC2626]/50 transition-colors">
+                  <div class="text-[#DC2626] text-2xl mb-2">
+                    💡
+                  </div>
+                  <h3 class="text-white font-bold mb-1">Innovative</h3>
+                  <p class="text-gray-500 text-sm">Creating tomorrow</p>
+                </div>
+                <div
+                  class="bg-[#1A1F26] p-4 rounded-xl border border-[#DC2626]/20 hover:border-[#DC2626]/50 transition-colors">
+                  <div class="text-[#DC2626] text-2xl mb-2">
+                    ���
+                  </div>
+                  <h3 class="text-white font-bold mb-1">Community</h3>
+                  <p class="text-gray-500 text-sm">Growing together</p>
+                </div>
+                <div
+                  class="bg-[#1A1F26] p-4 rounded-xl border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-colors">
+                  <div class="text-[#FFB347] text-2xl mb-2">
+                    🚀
+                  </div>
+                  <h3 class="text-white font-bold mb-1">Ambitious</h3>
+                  <p class="text-gray-500 text-sm">Reaching higher</p>
+                </div>
+              </div>
+            </div>
+                  </div>
+      </section>
+      
+      
+      <!-- Stats Section -->
+      <section class="px-6 py-16 bg-gradient-to-r from-[#FFB347]/10 via-transparent to-[#DC2626]/10">
+        <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl md:text-5xl font-black gradient-text mb-2">
+              50+
+            </div>
+            <p class="text-gray-400 text-sm">Projects Launched</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black gradient-text mb-2">
+              1K+
+            </div>
+            <p class="text-gray-400 text-sm">Young Innovators</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black gradient-text mb-2">
+              15
+            </div>
+            <p class="text-gray-400 text-sm">African Countries</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black gradient-text mb-2">
+              ∞
+            </div>
+            <p class="text-gray-400 text-sm">Possibilities</p>
+          </div>
+        </div>
+      </section>
+      
+      
+      <!-- Meet The Core Team Section -->
+      <section id="team" class="px-6 py-20">
+        <div class="max-w-6xl mx-auto"><!-- Section Header -->
+          <div class="text-center mb-16">
+            <h2 id="team-title" class="font-display text-4xl sm:text-5xl font-bold text-white mb-4">Meet The <span
+                class="gradient-text">Core Team</span></h2>
+            <p id="team-subtitle" class="text-gray-400 text-lg max-w-2xl mx-auto">Passionate innovators dedicated to
+              building Africa's tech future</p>
+          </div><!-- Team Carousel -->
+          <div class="relative"><!-- Carousel Container -->
+            <div class="overflow-hidden">
+              <div id="team-carousel" class="flex transition-transform duration-500 ease-out"><!-- Team Member 1 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="max-w-sm mx-auto group relative">
+                    <div
+                      class="bg-[#1A1F26] rounded-2xl p-8 border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all duration-300 hover:shadow-2xl hover:shadow-[#FFB347]/20">
+                      <!-- Avatar with African pattern -->
+                      <div class="relative mb-6">
+                        <div class="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] p-1">
+                          <div class="w-full h-full rounded-full bg-[#1A1F26] flex items-center justify-center">
+                            <svg class="w-24 h-24" viewbox="0 0 100 100">
+                              <circle cx="50" cy="35" r="15" fill="#FFB347" />
+                              <path d="M25 70 Q25 50 50 50 Q75 50 75 70 L75 85 Q75 90 70 90 L30 90 Q25 90 25 85 Z"
+                                fill="#FFB347" />
+                            </svg>
+                          </div>
+                        </div><!-- Decorative element -->
+                        <div class="absolute -top-2 -right-2 w-10 h-10">
+                          <svg viewbox="0 0 40 40">
+                            <polygon points="20,5 35,35 5,35" fill="#DC2626" opacity="0.6" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <h3 id="team-member-1-name" class="text-white font-bold text-2xl mb-2">Amara Okonkwo</h3>
+                        <p id="team-member-1-role" class="text-[#FFB347] text-base mb-4">Founder &amp; CEO</p>
+                        <p id="team-member-1-bio" class="text-gray-500 text-base leading-relaxed mb-6">Visionary leader
+                          passionate about empowering African youth through technology</p>
+                        <!-- LinkedIn & Portfolio Links -->
+                        <div class="flex flex-col gap-3"><a id="team-member-1-linkedin"
+                            href="https://linkedin.com/in/amara-okonkwo" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                              <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
+                            id="team-member-1-portfolio" href="https://amara-portfolio.com" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
+                            <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg><span class="text-sm font-medium">View Portfolio</span> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- Team Member 2 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="max-w-sm mx-auto group relative">
+                    <div
+                      class="bg-[#1A1F26] rounded-2xl p-8 border border-[#DC2626]/20 hover:border-[#DC2626]/50 transition-all duration-300 hover:shadow-2xl hover:shadow-[#DC2626]/20">
+                      <div class="relative mb-6">
+                        <div class="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-[#DC2626] to-[#FFB347] p-1">
+                          <div class="w-full h-full rounded-full bg-[#1A1F26] flex items-center justify-center">
+                            <svg class="w-24 h-24" viewbox="0 0 100 100">
+                              <circle cx="50" cy="35" r="15" fill="#DC2626" />
+                              <path d="M25 70 Q25 50 50 50 Q75 50 75 70 L75 85 Q75 90 70 90 L30 90 Q25 90 25 85 Z"
+                                fill="#DC2626" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-10 h-10">
+                          <svg viewbox="0 0 40 40">
+                            <circle cx="20" cy="20" r="10" fill="#FFB347" opacity="0.6" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <h3 id="team-member-2-name" class="text-white font-bold text-2xl mb-2">Kwame Mensah</h3>
+                        <p id="team-member-2-role" class="text-[#DC2626] text-base mb-4">CTO</p>
+                        <p id="team-member-2-bio" class="text-gray-500 text-base leading-relaxed mb-6">Tech architect
+                          building scalable solutions for African communities</p>
+                        <div class="flex flex-col gap-3"><a id="team-member-2-linkedin"
+                            href="https://linkedin.com/in/kwame-mensah" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                              <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
+                            id="team-member-2-portfolio" href="https://kwame-portfolio.com" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
+                            <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg><span class="text-sm font-medium">View Portfolio</span> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- Team Member 3 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="max-w-sm mx-auto group relative">
+                    <div
+                      class="bg-[#1A1F26] rounded-2xl p-8 border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all duration-300 hover:shadow-2xl hover:shadow-[#FFB347]/20">
+                      <div class="relative mb-6">
+                        <div class="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] p-1">
+                          <div class="w-full h-full rounded-full bg-[#1A1F26] flex items-center justify-center">
+                            <svg class="w-24 h-24" viewbox="0 0 100 100">
+                              <circle cx="50" cy="35" r="15" fill="#FFB347" />
+                              <path d="M25 70 Q25 50 50 50 Q75 50 75 70 L75 85 Q75 90 70 90 L30 90 Q25 90 25 85 Z"
+                                fill="#FFB347" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-10 h-10">
+                          <svg viewbox="0 0 40 40">
+                            <rect x="10" y="10" width="20" height="20" fill="#DC2626" opacity="0.6"
+                              transform="rotate(45 20 20)" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <h3 id="team-member-3-name" class="text-white font-bold text-2xl mb-2">Zainab Hassan</h3>
+                        <p id="team-member-3-role" class="text-[#FFB347] text-base mb-4">Head of Innovation</p>
+                        <p id="team-member-3-bio" class="text-gray-500 text-base leading-relaxed mb-6">Driving creative
+                          solutions and fostering innovation across the continent</p>
+                        <div class="flex flex-col gap-3"><a id="team-member-3-linkedin"
+                            href="https://linkedin.com/in/zainab-hassan" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                              <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
+                            id="team-member-3-portfolio" href="https://zainab-portfolio.com" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
+                            <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg><span class="text-sm font-medium">View Portfolio</span> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- Team Member 4 -->
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="max-w-sm mx-auto group relative">
+                    <div
+                      class="bg-[#1A1F26] rounded-2xl p-8 border border-[#DC2626]/20 hover:border-[#DC2626]/50 transition-all duration-300 hover:shadow-2xl hover:shadow-[#DC2626]/20">
+                      <div class="relative mb-6">
+                        <div class="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-[#DC2626] to-[#FFB347] p-1">
+                          <div class="w-full h-full rounded-full bg-[#1A1F26] flex items-center justify-center">
+                            <svg class="w-24 h-24" viewbox="0 0 100 100">
+                              <circle cx="50" cy="35" r="15" fill="#DC2626" />
+                              <path d="M25 70 Q25 50 50 50 Q75 50 75 70 L75 85 Q75 90 70 90 L30 90 Q25 90 25 85 Z"
+                                fill="#DC2626" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-10 h-10">
+                          <svg viewbox="0 0 40 40">
+                            <path d="M20 5 L30 35 L10 35 Z" fill="#FFB347" opacity="0.6" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="text-center">
+                        <h3 id="team-member-4-name" class="text-white font-bold text-2xl mb-2">Chidi Nkrumah</h3>
+                        <p id="team-member-4-role" class="text-[#DC2626] text-base mb-4">Community Lead</p>
+                        <p id="team-member-4-bio" class="text-gray-500 text-base leading-relaxed mb-6">Building bridges
+                          and nurturing the next generation of African innovators</p>
+                        <div class="flex flex-col gap-3"><a id="team-member-4-linkedin"
+                            href="https://linkedin.com/in/chidi-nkrumah" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                              <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
+                            id="team-member-4-portfolio" href="https://chidi-portfolio.com" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
+                            <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg><span class="text-sm font-medium">View Portfolio</span> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- Navigation Buttons -->
+            <button id="prev-btn"
+              class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] flex items-center justify-center hover:shadow-lg hover:shadow-[#FFB347]/50 transition-all hover:scale-110 z-10">
+              <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button id="next-btn"
+              class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] flex items-center justify-center hover:shadow-lg hover:shadow-[#FFB347]/50 transition-all hover:scale-110 z-10">
+              <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <!-- Dots Indicator -->
+            <div class="flex justify-center gap-2 mt-8">
+              <button class="carousel-dot w-3 h-3 rounded-full bg-[#FFB347] transition-all" data-index="0"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="1"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="2"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="3"></button>
+            </div>
+            <!-- See All Members Link -->
+            <div class="text-center mt-8">
+              <a href="#" id="see-all-members-link" class="text-[#FFB347] hover:text-[#DC2626] transition-colors text-sm font-semibold">See All Members →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <!-- Footer -->
+      <footer class="px-6 py-8 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">  
+          <p id="footer-text" class="text-gray-500 text-sm">© 2025 Bytant Innovative Group. Innovating to Inspire
+          </p>
+          <div class="flex items-center gap-6">
+
+            <a href="#" class="text-gray-500 hover:text-[#FFB347] transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+              </svg>
+            </a>
+
+               <a href="#" class="text-gray-500 hover:text-[#FFB347] transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+
+               <a href="https://www.linkedin.com/in/bytant-innovative-group" class="text-gray-500 hover:text-[#FFB347] transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
