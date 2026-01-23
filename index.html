@@ -16,10 +16,10 @@
 
 <body class="h-full font-body">
   <div id="app-wrapper" class="h-full w-full overflow-auto">
-    
+
     <!-- Background Layer -->
     <div class="fixed inset-0 bg-[#0D1117] kente-pattern"></div>
-    
+
     <!-- Floating African Geometric Elements -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
       <svg class="absolute top-20 left-10 w-32 h-32 animate-float opacity-20" viewbox="0 0 100 100">
@@ -42,31 +42,19 @@
         <path d="M50 25 L75 50 L50 75 L25 50 Z" fill="none" stroke="#DC2626" stroke-width="1.5" />
       </svg>
     </div>
-    
+
     <!-- Main Content -->
     <div class="relative z-10 min-h-full flex flex-col">
-      
+
       <!-- Navigation -->
       <nav class="w-full px-6 py-4 flex items-center justify-between animate-fade-in">
-        <div class="flex items-center gap-3">
-          
-          <!-- Logo SVG -->
-          <svg class="w-12 h-12" viewbox="0 0 60 60">
-            <defs>
-              <lineargradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#FFB347" />
-                <stop offset="100%" style="stop-color:#DC2626" />
-              </lineargradient>
-            </defs>
-            <polygon points="30,5 55,20 55,50 30,55 5,50 5,20" fill="none" stroke="url(#logoGrad)" stroke-width="2.5" />
-            <text x="30" y="38" text-anchor="middle" fill="url(#logoGrad)" font-size="24" font-weight="bold"
-              font-family="Space Grotesk">
-              B
-            </text>
-          </svg><span id="nav-logo-text" class="text-white font-bold text-xl hidden sm:block">Bytant</span>
+        <div class="flex items-center">
+
+          <!-- Logo-->
+          <img src="assets/img/Bytant logo ful.png" alt="Bytant Logo" class="w-20 h-20" />
         </div>
         <div class="flex items-center gap-6">
-          <div class="relative">
+          <div class="relative ">
             <button id="help-us-btn"
               class="border-2 border-[#FFB347] text-[#FFB347] px-5 py-2 rounded-full font-semibold text-sm hover:bg-[#FFB347]/10 transition-all duration-300 hover:scale-105">Help
               Us</button>
@@ -132,7 +120,8 @@
               Contact Us </button>
           </div>
         </div>
-      </nav><!-- Help Us Modal -->
+      </nav>
+      <!-- Help Us Modal -->
       <div id="help-modal"
         class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4">
         <div
@@ -228,7 +217,8 @@
             </button>
           </div>
         </div>
-      </div><!-- Contact Us Modal -->
+      </div>
+      <!-- Contact Us Modal -->
       <div id="contact-modal"
         class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4">
         <div
@@ -318,10 +308,10 @@
           </div>
         </div>
       </div>
-      
-      
+
+
       <!-- Hero Section -->
-      <section class="flex-1 flex flex-col items-center justify-center px-6 py-16 text-center">
+      <section class="flex-1 flex flex-col items-center justify-center px-6 py-10 text-center">
         <div class="max-w-4xl mx-auto"><!-- Decorative Element Above Title -->
           <div class="animate-slide-up mb-6">
             <svg class="w-20 h-8 mx-auto" viewbox="0 0 80 30">
@@ -344,7 +334,7 @@
               href="https://chat.whatsapp.com/DVWNz5WeXfQBDNVragWCqD" target="_blank" rel="noopener noreferrer"
               id="cta-primary-btn"
               class="group relative bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] px-10 py-4 rounded-full font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#FFB347]/40 hover:scale-105 inline-block">
-              <span class="relative z-10" id="cta-button-text">Join the Founder's Room</span>
+              <span class="relative z-10" id="cta-button-text">Join Us Build</span>
               <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
             </a> <a href="innovations.html"
               class="border-2 border-[#FFB347] text-[#FFB347] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#FFB347]/10 transition-all duration-300 hover:scale-105 inline-block text-center">
@@ -357,31 +347,15 @@
           </svg>
         </div>
       </section>
-      
-      
+
+
       <!-- Mission Section -->
       <section id="mission" class="px-6 py-20 adinkra-bg">
         <div class="max-w-6xl mx-auto">
           <div class="grid md:grid-cols-2 gap-12 items-center"><!-- African Pattern SVG -->
             <div class="relative order-2 md:order-1">
-              <svg class="w-full max-w-md mx-auto" viewbox="0 0 400 400"><!-- Outer ring -->
-                <circle cx="200" cy="200" r="180" fill="none" stroke="#FFB347" stroke-width="3" opacity="0.3" />
-                <circle cx="200" cy="200" r="160" fill="none" stroke="#DC2626" stroke-width="2" opacity="0.2" />
-                <!-- Inner geometric pattern (inspired by Adinkra symbols) -->
-                <g transform="translate(200, 200)"><!-- Sankofa-inspired shape -->
-                  <path d="M0,-80 Q40,-40 0,0 Q-40,-40 0,-80" fill="none" stroke="#FFB347" stroke-width="3" />
-                  <path d="M0,80 Q-40,40 0,0 Q40,40 0,80" fill="none" stroke="#FFB347" stroke-width="3" />
-                  <path d="M-80,0 Q-40,40 0,0 Q-40,-40 -80,0" fill="none" stroke="#DC2626" stroke-width="2" />
-                  <path d="M80,0 Q40,-40 0,0 Q40,40 80,0" fill="none" stroke="#DC2626" stroke-width="2" />
-                  <!-- Center element -->
-                  <circle cx="0" cy="0" r="20" fill="url(#logoGrad)" opacity="0.8" />
-                  <circle cx="0" cy="0" r="10" fill="#0D1117" />
-                </g> <!-- Corner decorations -->
-                <polygon points="50,50 80,50 65,80" fill="#FFB347" opacity="0.4" />
-                <polygon points="350,50 320,50 335,80" fill="#FFB347" opacity="0.4" />
-                <polygon points="50,350 80,350 65,320" fill="#DC2626" opacity="0.3" />
-                <polygon points="350,350 320,350 335,320" fill="#DC2626" opacity="0.3" />
-              </svg>
+              <img src="assets/img/bytant logo.png" alt="African Pattern"
+                class="w-full h-auto rounded-2xl border-4 border-[#FFB347]/20 shadow-2xl shadow-[#FFB347]/10 animate-float-slow" />
             </div><!-- Mission Content -->
             <div class="order-1 md:order-2">
               <h2 id="mission-title" class="font-display text-4xl sm:text-5xl font-bold text-white mb-6">Our <span
@@ -424,28 +398,28 @@
                 </div>
               </div>
             </div>
-                  </div>
+          </div>
       </section>
-      
-      
+
+
       <!-- Stats Section -->
       <section class="px-6 py-16 bg-gradient-to-r from-[#FFB347]/10 via-transparent to-[#DC2626]/10">
         <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div class="text-4xl md:text-5xl font-black gradient-text mb-2">
-              50+
+              20+
             </div>
             <p class="text-gray-400 text-sm">Projects Launched</p>
           </div>
           <div>
             <div class="text-4xl md:text-5xl font-black gradient-text mb-2">
-              1K+
+              10+
             </div>
-            <p class="text-gray-400 text-sm">Young Innovators</p>
+            <p class="text-gray-400 text-sm">Young Founders & Builders</p>
           </div>
           <div>
             <div class="text-4xl md:text-5xl font-black gradient-text mb-2">
-              15
+              3
             </div>
             <p class="text-gray-400 text-sm">African Countries</p>
           </div>
@@ -457,20 +431,24 @@
           </div>
         </div>
       </section>
-      
-      
+
+
       <!-- Meet The Core Team Section -->
       <section id="team" class="px-6 py-20">
         <div class="max-w-6xl mx-auto"><!-- Section Header -->
           <div class="text-center mb-16">
             <h2 id="team-title" class="font-display text-4xl sm:text-5xl font-bold text-white mb-4">Meet The <span
-                class="gradient-text">Core Team</span></h2>
+                class="gradient-text">Emerging Founders</span></h2>
             <p id="team-subtitle" class="text-gray-400 text-lg max-w-2xl mx-auto">Passionate innovators dedicated to
               building Africa's tech future</p>
-          </div><!-- Team Carousel -->
-          <div class="relative"><!-- Carousel Container -->
+          </div>
+          <!-- Team Carousel -->
+          <div class="relative">
+            <!-- Carousel Container -->
             <div class="overflow-hidden">
-              <div id="team-carousel" class="flex transition-transform duration-500 ease-out"><!-- Team Member 1 -->
+              <div id="team-carousel" class="flex transition-transform duration-500 ease-out">
+
+                <!-- Team Member 1 -->
                 <div class="w-full flex-shrink-0 px-4">
                   <div class="max-w-sm mx-auto group relative">
                     <div
@@ -493,19 +471,18 @@
                         </div>
                       </div>
                       <div class="text-center">
-                        <h3 id="team-member-1-name" class="text-white font-bold text-2xl mb-2">Amara Okonkwo</h3>
-                        <p id="team-member-1-role" class="text-[#FFB347] text-base mb-4">Founder &amp; CEO</p>
-                        <p id="team-member-1-bio" class="text-gray-500 text-base leading-relaxed mb-6">Visionary leader
-                          passionate about empowering African youth through technology</p>
+                        <h3 class="text-white font-bold text-2xl mb-2">Kelvin Omaboe</h3>
+                        <p class="text-[#FFB347] text-base mb-4">Innovations Lead</p>
+                        <p class="text-gray-500 text-base leading-relaxed mb-6">Visionary leader passionate about empowering African youth through technology</p>
                         <!-- LinkedIn & Portfolio Links -->
-                        <div class="flex flex-col gap-3"><a id="team-member-1-linkedin"
-                            href="https://linkedin.com/in/amara-okonkwo" target="_blank" rel="noopener noreferrer"
+                        <div class="flex flex-col gap-3"><a
+                            href="https://linkedin.com/in/kelvin-omaboe" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
                             <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
                               <path
                                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
-                            id="team-member-1-portfolio" href="https://amara-portfolio.com" target="_blank"
+                            href="https://kelvin-omaboe.vercel.app" target="_blank"
                             rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
                             <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
@@ -516,7 +493,9 @@
                       </div>
                     </div>
                   </div>
-                </div><!-- Team Member 2 -->
+                </div>
+
+                <!-- Team Member 2 -->
                 <div class="w-full flex-shrink-0 px-4">
                   <div class="max-w-sm mx-auto group relative">
                     <div
@@ -538,18 +517,17 @@
                         </div>
                       </div>
                       <div class="text-center">
-                        <h3 id="team-member-2-name" class="text-white font-bold text-2xl mb-2">Kwame Mensah</h3>
-                        <p id="team-member-2-role" class="text-[#DC2626] text-base mb-4">CTO</p>
-                        <p id="team-member-2-bio" class="text-gray-500 text-base leading-relaxed mb-6">Tech architect
-                          building scalable solutions for African communities</p>
-                        <div class="flex flex-col gap-3"><a id="team-member-2-linkedin"
-                            href="https://linkedin.com/in/kwame-mensah" target="_blank" rel="noopener noreferrer"
+                        <h3 class="text-white font-bold text-2xl mb-2">Henrietta Kumi</h3>
+                        <p class="text-[#DC2626] text-base mb-4">Loading</p>
+                        <p class="text-gray-500 text-base leading-relaxed mb-6">Loading</p>
+                        <div class="flex flex-col gap-3"><a
+                            href="https://linkedin.com/in/henrietta-kumi" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
                             <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
                               <path
                                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
-                            id="team-member-2-portfolio" href="https://kwame-portfolio.com" target="_blank"
+                            href="#" target="_blank"
                             rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
                             <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
@@ -560,7 +538,9 @@
                       </div>
                     </div>
                   </div>
-                </div><!-- Team Member 3 -->
+                </div>
+
+                <!-- Team Member 3 -->
                 <div class="w-full flex-shrink-0 px-4">
                   <div class="max-w-sm mx-auto group relative">
                     <div
@@ -583,18 +563,17 @@
                         </div>
                       </div>
                       <div class="text-center">
-                        <h3 id="team-member-3-name" class="text-white font-bold text-2xl mb-2">Zainab Hassan</h3>
-                        <p id="team-member-3-role" class="text-[#FFB347] text-base mb-4">Head of Innovation</p>
-                        <p id="team-member-3-bio" class="text-gray-500 text-base leading-relaxed mb-6">Driving creative
-                          solutions and fostering innovation across the continent</p>
-                        <div class="flex flex-col gap-3"><a id="team-member-3-linkedin"
-                            href="https://linkedin.com/in/zainab-hassan" target="_blank" rel="noopener noreferrer"
+                        <h3 class="text-white font-bold text-2xl mb-2">Godwin Datsomor</h3>
+                        <p class="text-[#FFB347] text-base mb-4">Loading</p>
+                        <p class="text-gray-500 text-base leading-relaxed mb-6">Driving creative solutions and fostering innovation across the continent</p>
+                        <div class="flex flex-col gap-3"><a
+                            href="https://linkedin.com/in/godwin-datsomor" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
                             <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
                               <path
                                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
-                            id="team-member-3-portfolio" href="https://zainab-portfolio.com" target="_blank"
+                            href="#" target="_blank"
                             rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
                             <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
@@ -651,57 +630,61 @@
                   </div>
                 </div>
               </div>
-            <!-- Navigation Buttons -->
-            <button id="prev-btn"
-              class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] flex items-center justify-center hover:shadow-lg hover:shadow-[#FFB347]/50 transition-all hover:scale-110 z-10">
-              <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button id="next-btn"
-              class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] flex items-center justify-center hover:shadow-lg hover:shadow-[#FFB347]/50 transition-all hover:scale-110 z-10">
-              <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-            <!-- Dots Indicator -->
-            <div class="flex justify-center gap-2 mt-8">
-              <button class="carousel-dot w-3 h-3 rounded-full bg-[#FFB347] transition-all" data-index="0"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="1"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="2"></button>
-              <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="3"></button>
-            </div>
-            <!-- See All Members Link -->
-            <div class="text-center mt-8">
-              <a href="#" id="see-all-members-link" class="text-[#FFB347] hover:text-[#DC2626] transition-colors text-sm font-semibold">See All Members →</a>
+              <!-- Navigation Buttons -->
+              <button id="prev-btn"
+                class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] flex items-center justify-center hover:shadow-lg hover:shadow-[#FFB347]/50 transition-all hover:scale-110 z-10">
+                <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button id="next-btn"
+                class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] flex items-center justify-center hover:shadow-lg hover:shadow-[#FFB347]/50 transition-all hover:scale-110 z-10">
+                <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              <!-- Dots Indicator -->
+              <div class="flex justify-center gap-2 mt-8">
+                <button class="carousel-dot w-3 h-3 rounded-full bg-[#FFB347] transition-all" data-index="0"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="1"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="2"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="3"></button>
+              </div>
+              <!-- See All Members Link -->
+              <div class="text-center mt-8">
+                <a href="#" id="see-all-members-link"
+                  class="text-[#FFB347] hover:text-[#DC2626] transition-colors text-sm font-semibold">See All Builders
+                  →</a>
+              </div>
             </div>
           </div>
-        </div>
       </section>
-      
-      
+
+
       <!-- Footer -->
       <footer class="px-6 py-8 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">  
-          <p id="footer-text" class="text-gray-500 text-sm">© 2025 Bytant Innovative Group. Innovating to Inspire
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p id="footer-text" class="text-white text-sm">© 2025 Bytant Innovative Group. Innovating to Inspire
           </p>
           <div class="flex items-center gap-6">
 
-            <a href="#" class="text-gray-500 hover:text-[#FFB347] transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+            <a href="https://www.x.com/bytant innovative group" class="text-gray-500 hover:text-[#FFB347] transition-colors">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
-                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                  d="M18.244 2.25h3.308l-7.227 8.26L22.75 21.75h-6.63l-5.19-6.79-5.94 6.79H1.68l7.73-8.84L1.25 2.25h6.797l4.694 6.14 5.503-6.14zm-1.16 17.52h1.833L7.08 4.126H5.11l11.974 15.644z" />
               </svg>
             </a>
 
-               <a href="#" class="text-gray-500 hover:text-[#FFB347] transition-colors">
+
+            <a href="https://www.github.com/bytant innovative group" class="text-gray-500 hover:text-[#FFB347] transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
                 <path
                   d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
             </a>
 
-               <a href="https://www.linkedin.com/in/bytant-innovative-group" class="text-gray-500 hover:text-[#FFB347] transition-colors">
+            <a href="https://www.linkedin.com/in/bytant-innovative-group"
+              class="text-gray-500 hover:text-[#FFB347] transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
                 <path
                   d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />

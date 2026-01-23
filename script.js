@@ -4,28 +4,6 @@ const defaultConfig = {
     hero_description: 'Empowering young Africans to rise, build, and shape the future of our continent through technology and innovation.',
     mission_title: 'Our Mission',
     mission_text: 'To ignite innovation across Africa by nurturing the next generation of tech leaders. We believe in the boundless potential of African youth to create solutions that will transform our communities and inspire the world.',
-    team_title: 'Meet The Core Team',
-    team_subtitle: 'Passionate innovators dedicated to building Africa\'s tech future',
-    team_member_1_name: 'Kelvin Omaboe',
-    team_member_1_role: 'Innovations Lead',
-    team_member_1_bio: 'Visionary leader passionate about empowering African youth through technology',
-    team_member_1_linkedin: 'https://linkedin.com/in/kelvin-omaboe',
-    team_member_1_portfolio: 'https://kelvin-omaboe.vercel.app',
-    team_member_2_name: 'Henrietta Kumi',
-    team_member_2_role: 'Loading',
-    team_member_2_bio: 'Loading',
-    team_member_2_linkedin: 'https://linkedin.com/in/henrietta-kumi',
-    team_member_2_portfolio: '#',
-    team_member_3_name: 'Godwin Datsomor',
-    team_member_3_role: 'Loading',
-    team_member_3_bio: 'Driving creative solutions and fostering innovation across the continent',
-    team_member_3_linkedin: 'https://linkedin.com/in/godwin-datsomor',
-    team_member_3_portfolio: '#',
-    team_member_4_name: 'Abigail Arthur',
-    team_member_4_role: 'Loading',
-    team_member_4_bio: 'Building bridges and nurturing the next generation of African innovators',
-    team_member_4_linkedin: 'https://linkedin.com/in/abigail-arthur',
-    team_member_4_portfolio: '#',
     cta_button_text: 'Join the Founder\'s Room',
     footer_text: '© 2025 Bytant Innovative Group. Building Africa\'s Future.',
     background_color: '#0D1117',
@@ -101,45 +79,7 @@ async function onConfigChange(cfg) {
         footerText.textContent = config.footer_text || defaultConfig.footer_text;
     }
 
-    // Update team section
-    const teamTitle = document.getElementById('team-title');
-    if (teamTitle) {
-        const title = config.team_title || defaultConfig.team_title;
-        const words = title.split(' ');
-        if (words.length >= 3) {
-            teamTitle.innerHTML = `${words.slice(0, -2).join(' ')} <span class="gradient-text">${words.slice(-2).join(' ')}</span>`;
-        } else {
-            teamTitle.textContent = title;
-        }
-    }
 
-    const teamSubtitle = document.getElementById('team-subtitle');
-    if (teamSubtitle) {
-        teamSubtitle.textContent = config.team_subtitle || defaultConfig.team_subtitle;
-        teamSubtitle.style.color = config.text_color || defaultConfig.text_color;
-    }
-
-    // Update team members
-    for (let i = 1; i <= 4; i++) {
-        const nameEl = document.getElementById(`team-member-${i}-name`);
-        const roleEl = document.getElementById(`team-member-${i}-role`);
-        const bioEl = document.getElementById(`team-member-${i}-bio`);
-        const linkedinEl = document.getElementById(`team-member-${i}-linkedin`);
-        const portfolioEl = document.getElementById(`team-member-${i}-portfolio`);
-
-        if (nameEl) nameEl.textContent = config[`team_member_${i}_name`] || defaultConfig[`team_member_${i}_name`];
-        if (roleEl) roleEl.textContent = config[`team_member_${i}_role`] || defaultConfig[`team_member_${i}_role`];
-        if (bioEl) {
-            bioEl.textContent = config[`team_member_${i}_bio`] || defaultConfig[`team_member_${i}_bio`];
-            bioEl.style.fontSize = `${baseSize * 0.875}px`;
-        }
-        if (linkedinEl) {
-            linkedinEl.href = config[`team_member_${i}_linkedin`] || defaultConfig[`team_member_${i}_linkedin`];
-        }
-        if (portfolioEl) {
-            portfolioEl.href = config[`team_member_${i}_portfolio`] || defaultConfig[`team_member_${i}_portfolio`];
-        }
-    }
 
     // Update background color
     const appWrapper = document.getElementById('app-wrapper');
@@ -210,7 +150,7 @@ function mapToCapabilities(cfg) {
 }
 
 function mapToEditPanelValues(cfg) {
-    return new Map([
+    const map = new Map([
         ['hero_title', cfg.hero_title || defaultConfig.hero_title],
         ['hero_slogan', cfg.hero_slogan || defaultConfig.hero_slogan],
         ['hero_description', cfg.hero_description || defaultConfig.hero_description],
@@ -218,29 +158,23 @@ function mapToEditPanelValues(cfg) {
         ['mission_text', cfg.mission_text || defaultConfig.mission_text],
         ['team_title', cfg.team_title || defaultConfig.team_title],
         ['team_subtitle', cfg.team_subtitle || defaultConfig.team_subtitle],
-        ['team_member_1_name', cfg.team_member_1_name || defaultConfig.team_member_1_name],
-        ['team_member_1_role', cfg.team_member_1_role || defaultConfig.team_member_1_role],
-        ['team_member_1_bio', cfg.team_member_1_bio || defaultConfig.team_member_1_bio],
-        ['team_member_1_linkedin', cfg.team_member_1_linkedin || defaultConfig.team_member_1_linkedin],
-        ['team_member_1_portfolio', cfg.team_member_1_portfolio || defaultConfig.team_member_1_portfolio],
-        ['team_member_2_name', cfg.team_member_2_name || defaultConfig.team_member_2_name],
-        ['team_member_2_role', cfg.team_member_2_role || defaultConfig.team_member_2_role],
-        ['team_member_2_bio', cfg.team_member_2_bio || defaultConfig.team_member_2_bio],
-        ['team_member_2_linkedin', cfg.team_member_2_linkedin || defaultConfig.team_member_2_linkedin],
-        ['team_member_2_portfolio', cfg.team_member_2_portfolio || defaultConfig.team_member_2_portfolio],
-        ['team_member_3_name', cfg.team_member_3_name || defaultConfig.team_member_3_name],
-        ['team_member_3_role', cfg.team_member_3_role || defaultConfig.team_member_3_role],
-        ['team_member_3_bio', cfg.team_member_3_bio || defaultConfig.team_member_3_bio],
-        ['team_member_3_linkedin', cfg.team_member_3_linkedin || defaultConfig.team_member_3_linkedin],
-        ['team_member_3_portfolio', cfg.team_member_3_portfolio || defaultConfig.team_member_3_portfolio],
-        ['team_member_4_name', cfg.team_member_4_name || defaultConfig.team_member_4_name],
-        ['team_member_4_role', cfg.team_member_4_role || defaultConfig.team_member_4_role],
-        ['team_member_4_bio', cfg.team_member_4_bio || defaultConfig.team_member_4_bio],
-        ['team_member_4_linkedin', cfg.team_member_4_linkedin || defaultConfig.team_member_4_linkedin],
-        ['team_member_4_portfolio', cfg.team_member_4_portfolio || defaultConfig.team_member_4_portfolio],
         ['cta_button_text', cfg.cta_button_text || defaultConfig.cta_button_text],
         ['footer_text', cfg.footer_text || defaultConfig.footer_text]
     ]);
+
+    // Dynamically add team member fields
+    for (const key in cfg) {
+        if (key.startsWith('team_member_') && key.endsWith('_name')) {
+            const index = key.match(/^team_member_(\d+)_name$/)[1];
+            map.set(`team_member_${index}_name`, cfg[`team_member_${index}_name`] || defaultConfig[`team_member_${index}_name`] || '');
+            map.set(`team_member_${index}_role`, cfg[`team_member_${index}_role`] || defaultConfig[`team_member_${index}_role`] || '');
+            map.set(`team_member_${index}_bio`, cfg[`team_member_${index}_bio`] || defaultConfig[`team_member_${index}_bio`] || '');
+            map.set(`team_member_${index}_linkedin`, cfg[`team_member_${index}_linkedin`] || defaultConfig[`team_member_${index}_linkedin`] || '');
+            map.set(`team_member_${index}_portfolio`, cfg[`team_member_${index}_portfolio`] || defaultConfig[`team_member_${index}_portfolio`] || '');
+        }
+    }
+
+    return map;
 }
 
 // Initialize SDK
@@ -332,90 +266,52 @@ if (navCtaBtn && contactModal) {
     });
 }
 
+
+
+
+
+
+
+
+
 // Team Carousel Functionality
-let currentSlide = 0;
+let currentIndex = 0;
 const carousel = document.getElementById('team-carousel');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const dots = document.querySelectorAll('.carousel-dot');
-const totalSlides = 4;
+const totalSlides = 4; // Number of team members
 
 function updateCarousel() {
-    if (carousel) {
-        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    // Update dots
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
     dots.forEach((dot, index) => {
-        if (index === currentSlide) {
-            dot.classList.remove('bg-gray-600');
-            dot.classList.add('bg-[#FFB347]');
-        } else {
-            dot.classList.remove('bg-[#FFB347]');
-            dot.classList.add('bg-gray-600');
-        }
+        dot.classList.toggle('bg-[#FFB347]', index === currentIndex);
+        dot.classList.toggle('bg-gray-600', index !== currentIndex);
     });
 }
 
 if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         updateCarousel();
     });
 }
 
 if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % totalSlides;
+        currentIndex = (currentIndex + 1) % totalSlides;
         updateCarousel();
     });
 }
 
-// Dot navigation
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-        currentSlide = index;
+        currentIndex = index;
         updateCarousel();
     });
 });
 
-// Auto-advance carousel every 5 seconds
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-}, 5000);
-
-// See All Members Modal Toggle
-const seeAllMembersLink = document.getElementById('see-all-members-link');
-const membersModal = document.getElementById('members-modal');
-const closeMembersModal = document.getElementById('close-members-modal');
-
-if (seeAllMembersLink && membersModal) {
-    // Open modal when clicking See All Members link
-    seeAllMembersLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        membersModal.classList.remove('hidden');
-    });
-
-    // Close modal when clicking X button
-    if (closeMembersModal) {
-        closeMembersModal.addEventListener('click', () => {
-            membersModal.classList.add('hidden');
-        });
-    }
-
-    // Close modal when clicking outside
-    membersModal.addEventListener('click', (e) => {
-        if (e.target === membersModal) {
-            membersModal.classList.add('hidden');
-        }
-    });
-}
-
-
-
-
-
-
+// Initialize carousel
+updateCarousel();
 
 (function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9c0bfcd6d59c933c',t:'MTc2ODg4NTAxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();
