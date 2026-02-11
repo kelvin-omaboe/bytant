@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="h-full">
 
 <head>
@@ -10,6 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
 </head>
@@ -62,9 +63,9 @@
             <!-- Help Us Dropdown Menu -->
             <div id="help-us-menu"
               class="hidden absolute top-full left-0 mt-2 w-64 bg-[#1A1F26] border-2 border-[#FFB347]/30 rounded-2xl shadow-2xl shadow-[#FFB347]/20 overflow-hidden z-[9999]">
-              <div class="p-2"><button
+              <div class="p-2"><button data-help-action="donate"
                   class="help-menu-item w-full text-left px-4 py-3 rounded-lg hover:bg-[#FFB347]/10 transition-colors group">
-                  <div class="flex items-center gap-3"><span class="text-2xl">����</span>
+                  <div class="flex items-center gap-3"><i class="fa-solid fa-heart text-[#FFB347] text-lg"></i>
                     <div>
                       <div class="text-white font-semibold text-sm group-hover:text-[#FFB347] transition-colors">
                         Donate
@@ -74,21 +75,9 @@
                       </div>
                     </div>
                   </div>
-                </button> <button
+                </button> <button data-help-action="idea"
                   class="help-menu-item w-full text-left px-4 py-3 rounded-lg hover:bg-[#FFB347]/10 transition-colors group">
-                  <div class="flex items-center gap-3"><span class="text-2xl">👨‍🏫</span>
-                    <div>
-                      <div class="text-white font-semibold text-sm group-hover:text-[#FFB347] transition-colors">
-                        Mentor a Founder
-                      </div>
-                      <div class="text-gray-500 text-xs">
-                        Share your expertise
-                      </div>
-                    </div>
-                  </div>
-                </button> <button
-                  class="help-menu-item w-full text-left px-4 py-3 rounded-lg hover:bg-[#FFB347]/10 transition-colors group">
-                  <div class="flex items-center gap-3"><span class="text-2xl">💡</span>
+                  <div class="flex items-center gap-3"><i class="fa-solid fa-lightbulb text-[#FFB347] text-lg"></i>
                     <div>
                       <div class="text-white font-semibold text-sm group-hover:text-[#FFB347] transition-colors">
                         Share Idea
@@ -98,9 +87,9 @@
                       </div>
                     </div>
                   </div>
-                </button> <button
+                </button> <button data-help-action="suggestion"
                   class="help-menu-item w-full text-left px-4 py-3 rounded-lg hover:bg-[#FFB347]/10 transition-colors group">
-                  <div class="flex items-center gap-3"><span class="text-2xl">✍️</span>
+                  <div class="flex items-center gap-3"><i class="fa-solid fa-pen-to-square text-[#FFB347] text-lg"></i>
                     <div>
                       <div class="text-white font-semibold text-sm group-hover:text-[#FFB347] transition-colors">
                         Leave a Suggestion
@@ -128,25 +117,19 @@
           class="bg-[#1A1F26] rounded-3xl border-2 border-[#FFB347]/30 shadow-2xl shadow-[#FFB347]/20 max-w-md w-full p-8 relative animate-slide-up">
           <!-- Close Button --> <button id="close-help-modal"
             class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
-            <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg></button> <!-- Modal Header -->
+            <i class="fa-solid fa-xmark text-xl"></i></button> <!-- Modal Header -->
           <div class="text-center mb-8">
             <div
               class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] flex items-center justify-center">
-              <svg class="w-8 h-8 text-[#0D1117]" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
+              <i class="fa-solid fa-heart text-[#0D1117] text-2xl"></i>
             </div>
             <h3 class="text-2xl font-bold text-white mb-2">How You Can Help</h3>
             <p class="text-gray-400 text-sm">Choose a way to support our mission</p>
           </div><!-- Help Options -->
-          <div class="space-y-4"><!-- Donate --> <button
+          <div class="space-y-4"><!-- Donate --> <button data-help-action="donate"
               class="help-option-btn flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group w-full text-left">
-              <div
-                class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center text-2xl">
-                💝
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center">
+                <i class="fa-solid fa-heart text-[#0D1117] text-xl"></i>
               </div>
               <div class="flex-1">
                 <div class="text-white font-semibold text-sm">
@@ -156,33 +139,11 @@
                   Support our mission financially
                 </div>
               </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
-                viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button> <!-- Mentor --> <button
+              <i class="fa-solid fa-chevron-right text-lg text-gray-400 group-hover:text-[#FFB347] transition-colors"></i>
+            </button> <!-- Share Idea --> <button data-help-action="idea"
               class="help-option-btn flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group w-full text-left">
-              <div
-                class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center text-2xl">
-                👨‍🏫
-              </div>
-              <div class="flex-1">
-                <div class="text-white font-semibold text-sm">
-                  Mentor a Founder
-                </div>
-                <div class="text-gray-400 text-xs">
-                  Share your expertise
-                </div>
-              </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
-                viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button> <!-- Share Idea --> <button
-              class="help-option-btn flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group w-full text-left">
-              <div
-                class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center text-2xl">
-                💡
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center">
+                <i class="fa-solid fa-lightbulb text-[#0D1117] text-xl"></i>
               </div>
               <div class="flex-1">
                 <div class="text-white font-semibold text-sm">
@@ -192,15 +153,11 @@
                   Contribute your vision
                 </div>
               </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
-                viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button> <!-- Suggestion --> <button
+              <i class="fa-solid fa-chevron-right text-lg text-gray-400 group-hover:text-[#FFB347] transition-colors"></i>
+            </button> <!-- Suggestion --> <button data-help-action="suggestion"
               class="help-option-btn flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group w-full text-left">
-              <div
-                class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center text-2xl">
-                ✍️
+              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB347] to-[#DC2626] flex items-center justify-center">
+                <i class="fa-solid fa-pen-to-square text-[#0D1117] text-xl"></i>
               </div>
               <div class="flex-1">
                 <div class="text-white font-semibold text-sm">
@@ -210,12 +167,155 @@
                   Help us improve
                 </div>
               </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
-                viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+              <i class="fa-solid fa-chevron-right text-lg text-gray-400 group-hover:text-[#FFB347] transition-colors"></i>
             </button>
           </div>
+        </div>
+      </div>
+      <!-- Donate Modal -->
+      <div id="donate-modal"
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4">
+        <div
+          class="bg-[#1A1F26] rounded-3xl border-2 border-[#FFB347]/30 shadow-2xl shadow-[#FFB347]/20 max-w-md w-full p-8 relative animate-slide-up">
+          <button id="close-donate-modal"
+            class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+          <div class="text-center mb-6">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] flex items-center justify-center">
+              <i class="fa-solid fa-hand-holding-heart text-[#0D1117] text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Donate via Mobile Money</h3>
+            <p class="text-gray-400 text-sm">Use the details below to support our mission.</p>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3">
+              <p class="text-xs uppercase tracking-wide text-gray-500">MoMo Number</p>
+              <p class="text-white font-semibold text-lg">(233) 504 378 971</p>
+            </div>
+            <div class="bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3">
+              <p class="text-xs uppercase tracking-wide text-gray-500">Account Name</p>
+              <p class="text-white font-semibold text-lg">KELVIN OMABOE</p>
+            </div>
+            <div class="bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3">
+              <p class="text-xs uppercase tracking-wide text-gray-500">Network</p>
+              <p class="text-white font-semibold text-lg">VODAFONE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Share Idea Modal -->
+      <div id="idea-modal"
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4">
+        <div
+          class="bg-[#1A1F26] rounded-3xl border-2 border-[#FFB347]/30 shadow-2xl shadow-[#FFB347]/20 max-w-lg w-full p-8 relative animate-slide-up">
+          <button id="close-idea-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+          <div class="text-center mb-6">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] flex items-center justify-center">
+              <i class="fa-solid fa-lightbulb text-[#0D1117] text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Share an Idea</h3>
+            <p class="text-gray-400 text-sm">Tell us about the innovation you want to see built.</p>
+          </div>
+          <form id="idea-form" class="space-y-4">
+            <div id="idea-identity-fields" class="space-y-4">
+              <div>
+                <label class="text-xs text-gray-400 uppercase tracking-wide">Full Name</label>
+                <input type="text" name="name" autocomplete="name"
+                  class="mt-2 w-full bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/40"
+                  placeholder="Your name" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 uppercase tracking-wide">Email</label>
+                <input type="email" name="email" autocomplete="email"
+                  class="mt-2 w-full bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/40"
+                  placeholder="you@email.com" />
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-3 bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-left">
+              <input id="idea-anon" type="checkbox"
+                class="mt-1 h-4 w-4 rounded border-[#FFB347]/40 bg-transparent text-[#FFB347] focus:ring-[#FFB347]/40" />
+              <div>
+                <label for="idea-anon" class="text-sm text-white font-semibold">Submit anonymously</label>
+                <p class="text-xs text-gray-500">We will not include your name or email in the WhatsApp message.</p>
+              </div>
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 uppercase tracking-wide">Idea Title</label>
+              <input type="text" name="idea_title" required
+                class="mt-2 w-full bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/40"
+                placeholder="Short, descriptive title" />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 uppercase tracking-wide">Your Idea</label>
+              <textarea name="idea_details" rows="4" required
+                class="mt-2 w-full bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/40"
+                placeholder="Describe the problem and your proposed solution"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] py-3 rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-[#FFB347]/30 transition-all duration-300 hover:scale-105">
+              Send Idea
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Suggestion Modal -->
+      <div id="suggestion-modal"
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[10000] flex items-center justify-center p-4">
+        <div
+          class="bg-[#1A1F26] rounded-3xl border-2 border-[#FFB347]/30 shadow-2xl shadow-[#FFB347]/20 max-w-lg w-full p-8 relative animate-slide-up">
+          <button id="close-suggestion-modal"
+            class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+          <div class="text-center mb-6">
+            <div
+              class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] flex items-center justify-center">
+              <i class="fa-solid fa-pen-to-square text-[#0D1117] text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">Leave a Suggestion</h3>
+            <p class="text-gray-400 text-sm">Help us improve the Bytant experience.</p>
+          </div>
+          <form id="suggestion-form" class="space-y-4">
+            <div id="suggestion-identity-fields" class="space-y-4">
+              <div>
+                <label class="text-xs text-gray-400 uppercase tracking-wide">Full Name</label>
+                <input type="text" name="name" autocomplete="name"
+                  class="mt-2 w-full bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/40"
+                  placeholder="Your name (optional)" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 uppercase tracking-wide">Email</label>
+                <input type="email" name="email" autocomplete="email"
+                  class="mt-2 w-full bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/40"
+                  placeholder="you@email.com (optional)" />
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-3 bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-left">
+              <input id="suggestion-anon" type="checkbox"
+                class="mt-1 h-4 w-4 rounded border-[#FFB347]/40 bg-transparent text-[#FFB347] focus:ring-[#FFB347]/40" />
+              <div>
+                <label for="suggestion-anon" class="text-sm text-white font-semibold">Submit anonymously</label>
+                <p class="text-xs text-gray-500">We will not include your name or email in the WhatsApp message.</p>
+              </div>
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 uppercase tracking-wide">Suggestion</label>
+              <textarea name="suggestion" rows="4" required
+                class="mt-2 w-full bg-[#0D1117] border border-[#FFB347]/20 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#FFB347]/40"
+                placeholder="Share your suggestion or feedback"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] py-3 rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-[#FFB347]/30 transition-all duration-300 hover:scale-105">
+              Send Suggestion
+            </button>
+          </form>
         </div>
       </div>
       <!-- Contact Us Modal -->
@@ -225,16 +325,11 @@
           class="bg-[#1A1F26] rounded-3xl border-2 border-[#FFB347]/30 shadow-2xl shadow-[#FFB347]/20 max-w-md w-full p-8 relative animate-slide-up">
           <!-- Close Button --> <button id="close-contact-modal"
             class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
-            <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg></button> <!-- Modal Header -->
+            <i class="fa-solid fa-xmark text-xl"></i></button> <!-- Modal Header -->
           <div class="text-center mb-8">
             <div
               class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] flex items-center justify-center">
-              <svg class="w-8 h-8 text-[#0D1117]" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
+              <i class="fa-solid fa-envelope text-[#0D1117] text-2xl"></i>
             </div>
             <h3 class="text-2xl font-bold text-white mb-2">Get In Touch</h3>
             <p class="text-gray-400 text-sm">We'd love to hear from you!</p>
@@ -244,10 +339,7 @@
               class="flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group">
               <div
                 class="w-12 h-12 rounded-full bg-[#25D366]/20 flex items-center justify-center group-hover:bg-[#25D366]/30 transition-colors">
-                <svg class="w-6 h-6 text-[#25D366]" fill="currentColor" viewbox="0 0 24 24">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
+                <i class="fa-brands fa-whatsapp text-[#25D366] text-xl"></i>
               </div>
               <div class="flex-1">
                 <div class="text-white font-semibold text-sm">
@@ -257,18 +349,12 @@
                   0504378971
                 </div>
               </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
-                viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+              <i class="fa-solid fa-chevron-right text-lg text-gray-400 group-hover:text-[#FFB347] transition-colors"></i>
             </a> <!-- Email --> <a href="mailto:bytantinnovativegroup@gmail.com"
               class="flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group">
               <div
                 class="w-12 h-12 rounded-full bg-[#FFB347]/20 flex items-center justify-center group-hover:bg-[#FFB347]/30 transition-colors">
-                <svg class="w-6 h-6 text-[#FFB347]" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+                <i class="fa-solid fa-envelope text-[#FFB347] text-xl"></i>
               </div>
               <div class="flex-1">
                 <div class="text-white font-semibold text-sm">
@@ -278,19 +364,13 @@
                   bytantinnovativegroup@gmail.com
                 </div>
               </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
-                viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+              <i class="fa-solid fa-chevron-right text-lg text-gray-400 group-hover:text-[#FFB347] transition-colors"></i>
             </a> <!-- LinkedIn --> <a href="https://linkedin.com/company/bytant-innovative-group" target="_blank"
               rel="noopener noreferrer"
               class="flex items-center gap-4 p-4 rounded-xl bg-[#0D1117] border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-all hover:scale-105 group">
               <div
                 class="w-12 h-12 rounded-full bg-[#0A66C2]/20 flex items-center justify-center group-hover:bg-[#0A66C2]/30 transition-colors">
-                <svg class="w-6 h-6 text-[#0A66C2]" fill="currentColor" viewbox="0 0 24 24">
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
+                <i class="fa-brands fa-linkedin-in text-[#0A66C2] text-xl"></i>
               </div>
               <div class="flex-1">
                 <div class="text-white font-semibold text-sm">
@@ -300,10 +380,7 @@
                   bytant-innovative-group
                 </div>
               </div>
-              <svg class="w-5 h-5 text-gray-400 group-hover:text-[#FFB347] transition-colors" fill="none"
-                viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+              <i class="fa-solid fa-chevron-right text-lg text-gray-400 group-hover:text-[#FFB347] transition-colors"></i>
             </a>
           </div>
         </div>
@@ -342,9 +419,7 @@
           </div>
         </div><!-- Scroll Indicator -->
         <div class="mt-16 animate-bounce">
-          <svg class="w-8 h-8 text-[#FFB347] opacity-60" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+          <i class="fa-solid fa-arrow-down text-[#FFB347] text-2xl opacity-60"></i>
         </div>
       </section>
 
@@ -367,7 +442,7 @@
                 <div
                   class="bg-[#1A1F26] p-4 rounded-xl border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-colors">
                   <div class="text-[#FFB347] text-2xl mb-2">
-                    🌍
+                    <i class="fa-solid fa-earth-africa"></i>
                   </div>
                   <h3 class="text-white font-bold mb-1">Pan-African</h3>
                   <p class="text-gray-500 text-sm">United across borders</p>
@@ -375,7 +450,7 @@
                 <div
                   class="bg-[#1A1F26] p-4 rounded-xl border border-[#DC2626]/20 hover:border-[#DC2626]/50 transition-colors">
                   <div class="text-[#DC2626] text-2xl mb-2">
-                    💡
+                    <i class="fa-solid fa-lightbulb"></i>
                   </div>
                   <h3 class="text-white font-bold mb-1">Innovative</h3>
                   <p class="text-gray-500 text-sm">Creating tomorrow</p>
@@ -383,7 +458,7 @@
                 <div
                   class="bg-[#1A1F26] p-4 rounded-xl border border-[#DC2626]/20 hover:border-[#DC2626]/50 transition-colors">
                   <div class="text-[#DC2626] text-2xl mb-2">
-                    ���
+                    <i class="fa-solid fa-people-group"></i>
                   </div>
                   <h3 class="text-white font-bold mb-1">Community</h3>
                   <p class="text-gray-500 text-sm">Growing together</p>
@@ -391,7 +466,7 @@
                 <div
                   class="bg-[#1A1F26] p-4 rounded-xl border border-[#FFB347]/20 hover:border-[#FFB347]/50 transition-colors">
                   <div class="text-[#FFB347] text-2xl mb-2">
-                    🚀
+                    <i class="fa-solid fa-rocket"></i>
                   </div>
                   <h3 class="text-white font-bold mb-1">Ambitious</h3>
                   <p class="text-gray-500 text-sm">Reaching higher</p>
@@ -425,7 +500,7 @@
           </div>
           <div>
             <div class="text-4xl md:text-5xl font-black gradient-text mb-2">
-              ∞
+              <i class="fa-solid fa-infinity"></i>
             </div>
             <p class="text-gray-400 text-sm">Possibilities</p>
           </div>
@@ -478,17 +553,11 @@
                         <div class="flex flex-col gap-3"><a
                             href="https://linkedin.com/in/kelvin-omaboe" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
-                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
-                              <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
+                            <i class="fa-brands fa-linkedin-in text-lg"></i><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
                             href="https://kelvin-omaboe.vercel.app" target="_blank"
                             rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
-                            <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg><span class="text-sm font-medium">View Portfolio</span> </a>
+                            <i class="fa-solid fa-briefcase text-lg"></i><span class="text-sm font-medium">View Portfolio</span> </a>
                         </div>
                       </div>
                     </div>
@@ -523,17 +592,11 @@
                         <div class="flex flex-col gap-3"><a
                             href="https://linkedin.com/in/henrietta-kumi" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
-                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
-                              <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
+                            <i class="fa-brands fa-linkedin-in text-lg"></i><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
                             href="#" target="_blank"
                             rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
-                            <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg><span class="text-sm font-medium">View Portfolio</span> </a>
+                            <i class="fa-solid fa-briefcase text-lg"></i><span class="text-sm font-medium">View Portfolio</span> </a>
                         </div>
                       </div>
                     </div>
@@ -569,17 +632,11 @@
                         <div class="flex flex-col gap-3"><a
                             href="https://linkedin.com/in/godwin-datsomor" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
-                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
-                              <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
+                            <i class="fa-brands fa-linkedin-in text-lg"></i><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
                             href="#" target="_blank"
                             rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
-                            <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg><span class="text-sm font-medium">View Portfolio</span> </a>
+                            <i class="fa-solid fa-briefcase text-lg"></i><span class="text-sm font-medium">View Portfolio</span> </a>
                         </div>
                       </div>
                     </div>
@@ -613,17 +670,11 @@
                         <div class="flex flex-col gap-3"><a id="team-member-4-linkedin"
                             href="https://linkedin.com/in/chidi-nkrumah" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#0A66C2] hover:text-[#FFB347] transition-colors group/link">
-                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
-                              <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
+                            <i class="fa-brands fa-linkedin-in text-lg"></i><span class="text-sm font-medium">Connect on LinkedIn</span> </a> <a
                             id="team-member-4-portfolio" href="https://chidi-portfolio.com" target="_blank"
                             rel="noopener noreferrer"
                             class="inline-flex items-center gap-2 text-[#FFB347] hover:text-[#DC2626] transition-colors group/link">
-                            <svg class="w-5 h-5" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg><span class="text-sm font-medium">View Portfolio</span> </a>
+                            <i class="fa-solid fa-briefcase text-lg"></i><span class="text-sm font-medium">View Portfolio</span> </a>
                         </div>
                       </div>
                     </div>
@@ -633,15 +684,11 @@
               <!-- Navigation Buttons -->
               <button id="prev-btn"
                 class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] flex items-center justify-center hover:shadow-lg hover:shadow-[#FFB347]/50 transition-all hover:scale-110 z-10">
-                <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
-                </svg>
+                <i class="fa-solid fa-chevron-left text-xl"></i>
               </button>
               <button id="next-btn"
                 class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] flex items-center justify-center hover:shadow-lg hover:shadow-[#FFB347]/50 transition-all hover:scale-110 z-10">
-                <svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
-                </svg>
+                <i class="fa-solid fa-chevron-right text-xl"></i>
               </button>
               <!-- Dots Indicator -->
               <div class="flex justify-center gap-2 mt-8">
@@ -650,12 +697,7 @@
                 <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="2"></button>
                 <button class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition-all" data-index="3"></button>
               </div>
-              <!-- See All Members Link -->
-              <div class="text-center mt-8">
-                <a href="#" id="see-all-members-link"
-                  class="text-[#FFB347] hover:text-[#DC2626] transition-colors text-sm font-semibold">See All Builders
-                  →</a>
-              </div>
+
             </div>
           </div>
       </section>
@@ -669,26 +711,17 @@
           <div class="flex items-center gap-6">
 
             <a href="https://www.x.com/bytant innovative group" class="text-gray-500 hover:text-[#FFB347] transition-colors">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M18.244 2.25h3.308l-7.227 8.26L22.75 21.75h-6.63l-5.19-6.79-5.94 6.79H1.68l7.73-8.84L1.25 2.25h6.797l4.694 6.14 5.503-6.14zm-1.16 17.52h1.833L7.08 4.126H5.11l11.974 15.644z" />
-              </svg>
+              <i class="fa-brands fa-x-twitter text-lg"></i>
             </a>
 
 
             <a href="https://www.github.com/bytant innovative group" class="text-gray-500 hover:text-[#FFB347] transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
+              <i class="fa-brands fa-github text-lg"></i>
             </a>
 
             <a href="https://www.linkedin.com/in/bytant-innovative-group"
               class="text-gray-500 hover:text-[#FFB347] transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
+              <i class="fa-brands fa-linkedin-in text-lg"></i>
             </a>
           </div>
         </div>
@@ -699,3 +732,9 @@
 </body>
 
 </html>
+
+
+
+
+
+

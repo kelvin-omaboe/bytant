@@ -187,57 +187,213 @@ if (window.elementSdk) {
     });
 }
 
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-8 right-8 bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] px-6 py-4 rounded-2xl shadow-2xl font-semibold text-sm z-50 animate-slide-up';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(20px)';
+        toast.style.transition = 'all 0.3s ease-out';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+function openWhatsApp(message) {
+    const phone = '233504378971';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank', 'noopener');
+}
+
+function toggleModal(modal, shouldOpen) {
+    if (!modal) return;
+    modal.classList.toggle('hidden', !shouldOpen);
+}
+
+function wireModalClose(modal, closeBtn) {
+    if (!modal) return;
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => toggleModal(modal, false));
+    }
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            toggleModal(modal, false);
+        }
+    });
+}
+
+function setupAnonymousToggle({ checkbox, container, fields, requiredFields }) {
+    if (!checkbox) return;
+    const update = () => {
+        const isAnonymous = checkbox.checked;
+        if (container) {
+            container.classList.toggle('opacity-50', isAnonymous);
+            container.classList.toggle('pointer-events-none', isAnonymous);
+        }
+        fields.forEach((field) => {
+            if (!field) return;
+            field.disabled = isAnonymous;
+            if (isAnonymous) {
+                field.dataset.cachedValue = field.value;
+                field.value = '';
+            } else if (field.dataset.cachedValue !== undefined) {
+                field.value = field.dataset.cachedValue;
+                delete field.dataset.cachedValue;
+            }
+        });
+        requiredFields.forEach((field) => {
+            if (field) {
+                field.required = !isAnonymous;
+            }
+        });
+    };
+
+    checkbox.addEventListener('change', update);
+    update();
+}
+
 // Help Us Modal Toggle
 const helpUsBtn = document.getElementById('help-us-btn');
 const helpModal = document.getElementById('help-modal');
 const closeHelpModal = document.getElementById('close-help-modal');
+const helpMenu = document.getElementById('help-us-menu');
+const donateModal = document.getElementById('donate-modal');
+const closeDonateModal = document.getElementById('close-donate-modal');
 
 if (helpUsBtn && helpModal) {
-    // Open modal when clicking Help Us button
     helpUsBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        helpModal.classList.remove('hidden');
-    });
-
-    // Close modal when clicking X button
-    if (closeHelpModal) {
-        closeHelpModal.addEventListener('click', () => {
-            helpModal.classList.add('hidden');
-        });
-    }
-
-    // Close modal when clicking outside
-    helpModal.addEventListener('click', (e) => {
-        if (e.target === helpModal) {
-            helpModal.classList.add('hidden');
-        }
-    });
-
-    // Handle help option clicks
-    const helpOptions = document.querySelectorAll('.help-option-btn');
-    helpOptions.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-            const actions = ['Donate', 'Mentor a Founder', 'Share an Idea', 'Leave a Suggestion'];
-
-            // Create toast notification
-            const toast = document.createElement('div');
-            toast.className = 'fixed bottom-8 right-8 bg-gradient-to-r from-[#FFB347] to-[#DC2626] text-[#0D1117] px-6 py-4 rounded-2xl shadow-2xl font-semibold text-sm z-50 animate-slide-up';
-            toast.textContent = `Thank you for choosing to ${actions[index]}! We'll be in touch soon.`;
-            document.body.appendChild(toast);
-
-            // Remove toast after 3 seconds
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(20px)';
-                toast.style.transition = 'all 0.3s ease-out';
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
-
-            // Close modal
-            helpModal.classList.add('hidden');
-        });
+        toggleModal(helpModal, true);
     });
 }
+
+wireModalClose(helpModal, closeHelpModal);
+wireModalClose(donateModal, closeDonateModal);
+
+const ideaModal = document.getElementById('idea-modal');
+const suggestionModal = document.getElementById('suggestion-modal');
+const closeIdeaModal = document.getElementById('close-idea-modal');
+const closeSuggestionModal = document.getElementById('close-suggestion-modal');
+
+wireModalClose(ideaModal, closeIdeaModal);
+wireModalClose(suggestionModal, closeSuggestionModal);
+
+const ideaForm = document.getElementById('idea-form');
+const ideaAnonToggle = document.getElementById('idea-anon');
+const ideaIdentityFields = document.getElementById('idea-identity-fields');
+const ideaNameInput = ideaForm ? ideaForm.querySelector('input[name="name"]') : null;
+const ideaEmailInput = ideaForm ? ideaForm.querySelector('input[name="email"]') : null;
+
+setupAnonymousToggle({
+    checkbox: ideaAnonToggle,
+    container: ideaIdentityFields,
+    fields: [ideaNameInput, ideaEmailInput],
+    requiredFields: [ideaNameInput, ideaEmailInput]
+});
+
+if (ideaForm) {
+    ideaForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(ideaForm);
+        const isAnonymous = ideaAnonToggle ? ideaAnonToggle.checked : false;
+        const name = isAnonymous ? '' : (formData.get('name') || '').toString().trim();
+        const email = isAnonymous ? '' : (formData.get('email') || '').toString().trim();
+        const title = (formData.get('idea_title') || '').toString().trim();
+        const details = (formData.get('idea_details') || '').toString().trim();
+
+        const message = [
+            'New Idea Submission',
+            isAnonymous ? 'Submitted anonymously: Yes' : null,
+            name ? `Name: ${name}` : null,
+            email ? `Email: ${email}` : null,
+            title ? `Title: ${title}` : null,
+            details ? `Idea: ${details}` : null
+        ].filter(Boolean).join('\n');
+
+        openWhatsApp(message);
+        showToast('Opening WhatsApp to send your idea.');
+        ideaForm.reset();
+        if (ideaAnonToggle) {
+            ideaAnonToggle.dispatchEvent(new Event('change'));
+        }
+        toggleModal(ideaModal, false);
+    });
+}
+
+const suggestionForm = document.getElementById('suggestion-form');
+const suggestionAnonToggle = document.getElementById('suggestion-anon');
+const suggestionIdentityFields = document.getElementById('suggestion-identity-fields');
+const suggestionNameInput = suggestionForm ? suggestionForm.querySelector('input[name="name"]') : null;
+const suggestionEmailInput = suggestionForm ? suggestionForm.querySelector('input[name="email"]') : null;
+
+setupAnonymousToggle({
+    checkbox: suggestionAnonToggle,
+    container: suggestionIdentityFields,
+    fields: [suggestionNameInput, suggestionEmailInput],
+    requiredFields: []
+});
+
+if (suggestionForm) {
+    suggestionForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(suggestionForm);
+        const isAnonymous = suggestionAnonToggle ? suggestionAnonToggle.checked : false;
+        const name = isAnonymous ? '' : (formData.get('name') || '').toString().trim();
+        const email = isAnonymous ? '' : (formData.get('email') || '').toString().trim();
+        const suggestion = (formData.get('suggestion') || '').toString().trim();
+
+        const message = [
+            'New Suggestion',
+            isAnonymous ? 'Submitted anonymously: Yes' : null,
+            name ? `Name: ${name}` : null,
+            email ? `Email: ${email}` : null,
+            suggestion ? `Suggestion: ${suggestion}` : null
+        ].filter(Boolean).join('\n');
+
+        openWhatsApp(message);
+        showToast('Opening WhatsApp to send your suggestion.');
+        suggestionForm.reset();
+        if (suggestionAnonToggle) {
+            suggestionAnonToggle.dispatchEvent(new Event('change'));
+        }
+        toggleModal(suggestionModal, false);
+    });
+}
+
+const helpActionButtons = document.querySelectorAll('[data-help-action]');
+helpActionButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const action = btn.dataset.helpAction;
+        if (action === 'donate') {
+            toggleModal(helpModal, false);
+            toggleModal(donateModal, true);
+            toggleModal(helpMenu, false);
+            return;
+        }
+        if (action === 'idea') {
+            toggleModal(helpModal, false);
+            toggleModal(ideaModal, true);
+            toggleModal(helpMenu, false);
+            return;
+        }
+
+        if (action === 'suggestion') {
+            toggleModal(helpModal, false);
+            toggleModal(suggestionModal, true);
+            toggleModal(helpMenu, false);
+            return;
+        }
+
+        const labels = {};
+        if (labels[action]) {
+            showToast(`Thank you for choosing to ${labels[action]}! We'll be in touch soon.`);
+            toggleModal(helpModal, false);
+            toggleModal(helpMenu, false);
+        }
+    });
+});
 
 // Contact Modal Toggle
 const navCtaBtn = document.getElementById('nav-cta-btn');
